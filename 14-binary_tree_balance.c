@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include <stdio.h>
 
 int helper_func(const binary_tree_t *);
 
@@ -12,14 +11,14 @@ int helper_func(const binary_tree_t *);
  */
 size_t binary_tree_balance(const binary_tree_t *tree)
 {
-    int left, right;
+	int left, right;
 
-    if (!tree)
-        return (0);
+	if (!tree)
+		return (0);
 
-    left = helper_func(tree->left) + 1;
-    right = helper_func(tree->right) + 1;
-    return ((size_t)(left - right));
+	left = helper_func(tree->left) + 1;
+	right = helper_func(tree->right) + 1;
+	return ((size_t)(left - right));
 }
 
 /**
@@ -31,12 +30,12 @@ size_t binary_tree_balance(const binary_tree_t *tree)
  */
 int helper_func(const binary_tree_t *tree)
 {
-    int left, right;
+	int left, right;
 
-    if (!tree)
-        return (-1);
+	if (!tree)
+		return (-1);
 
-    left = helper_func(tree->left);
-    right = helper_func(tree->right);
-    return (((left > right) ? left : right) + 1);
+	left = helper_func(tree->left);
+	right = helper_func(tree->right);
+	return (((left > right) ? left : right) + 1);
 }
