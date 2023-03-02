@@ -65,10 +65,10 @@ int helper_func(const binary_tree_t *tree)
  */
 int _binary_tree_is_full(const binary_tree_t *tree)
 {
+	int left, right;
+
 	if (!tree)
 		return (0);
-
-	int left, right;
 
 	left = _binary_tree_is_full(tree->left);
 	right = _binary_tree_is_full(tree->right);
